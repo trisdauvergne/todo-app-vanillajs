@@ -15,13 +15,13 @@ const newTodo = (e) => {
 
   // create the li
   const newTodo = document.createElement('li');
-  newTodo.innerText = 'hey';
+  newTodo.innerText = todoInput.value;
   newTodo.classList.add('todo-item');
   todoDiv.appendChild(newTodo); // adding the new li to the todo div above
 
   // create the check mark button
   const completedBtn = document.createElement('button');
-  completedBtn.innerText = 'Complete';
+  completedBtn.innerText = 'Done';
   completedBtn.classList.add('complete-btn');
   todoDiv.appendChild(completedBtn);
 
@@ -33,6 +33,9 @@ const newTodo = (e) => {
 
   // append the newly created todo div to the existing todo-list in HTML
   todoList.appendChild(todoDiv);
+
+  // clear todoInput value
+  todoInput.value = '';
 }
 
 // listeners
