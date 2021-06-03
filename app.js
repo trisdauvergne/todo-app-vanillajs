@@ -24,18 +24,30 @@ const newTodo = (e) => {
   completedBtn.innerText = 'Done';
   completedBtn.classList.add('complete-btn');
   todoDiv.appendChild(completedBtn);
+  completedBtn.addEventListener('click', markAsDone)
 
   // create the delete button
   const deleteBtn = document.createElement('button');
   deleteBtn.innerText = 'Delete';
   deleteBtn.classList.add('delete-btn');
   todoDiv.appendChild(deleteBtn);
+  deleteBtn.addEventListener('click', deleteTodo);
 
   // append the newly created todo div to the existing todo-list in HTML
   todoList.appendChild(todoDiv);
 
   // clear todoInput value
   todoInput.value = '';
+}
+
+const deleteTodo = (e) => {
+  const todoItem = e.target.parentElement;
+  todoItem.remove();
+}
+
+const markAsDone = (e) => {
+  const markItem = e.target.parentElement;
+  markItem.classList.toggle('completed');
 }
 
 // listeners
