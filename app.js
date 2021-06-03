@@ -42,7 +42,10 @@ const newTodo = (e) => {
 
 const deleteTodo = (e) => {
   const todoItem = e.target.parentElement;
-  todoItem.remove();
+  todoItem.classList.add('fall');
+  todoItem.addEventListener('transitionend', () => {
+    todoItem.remove();
+  })
 }
 
 const markAsDone = (e) => {
