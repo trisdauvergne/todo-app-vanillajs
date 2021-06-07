@@ -7,3 +7,14 @@
 .completed {
   background-color: red;
 }
+
+.todo-items__item-div {
+  border: 1px dashed salmon;
+}
+
+.empty {
+  border: 1px dashed black;
+  display: inline-block;
+  width: 30%;
+  height: 50px;
+}

@@ -2,6 +2,7 @@
 const todoInput = document.querySelector('.todo-form__input');
 const todoBtn = document.querySelector('.todo-form__btn');
 const todoList = document.querySelector('.todo-items__list');
+const empty = document.querySelectorAll('.empty');
 
 // Functions
 const addItem = (e) => {
@@ -11,6 +12,9 @@ const addItem = (e) => {
   // create the div
   const todoDiv = document.createElement('div');
   todoDiv.classList.add('todo-items__item-div');
+  todoDiv.setAttribute('draggable', true);
+  todoDiv.addEventListener('dragstart', dragStart);
+  todoDiv.addEventListener('dragend', dragEnd);
 
   // create the li
   const todoItem = document.createElement('li');
@@ -44,7 +48,19 @@ const addItem = (e) => {
 
 const markAsComplete = (e) => {
   const completedItem = e.target.parentElement;
-  completedItem.classList.toggle('completed')
+  completedItem.classList.toggle('completed');
+  // const complete = document.querySelector('.completed');
+  // complete.addEventListener('dragstart', dragStart);
+  // complete.addEventListener('dragend', dragEnd);
+}
+
+// Drag functions
+const dragStart = () => {
+  console.log('start');
+}
+
+const dragEnd = () => {
+  console.log('end');
 }
 
 const deleteTodoItem = (e) => {
