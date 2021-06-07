@@ -18,12 +18,19 @@ const addItem = (e) => {
   todoItem.classList.add('todo-items__li-item');
   todoDiv.appendChild(todoItem);
 
-  // create the delete button
-  const deleteBtn = document.createElement('button');
-  deleteBtn.innerText = 'Delete';
-  deleteBtn.classList.add('todo-items__delete-btn')
-  todoDiv.appendChild(deleteBtn);
-  deleteBtn.addEventListener('click', deleteTodoItem);
+  // create the check mark button
+  const completedBtn = document.createElement('button');
+  completedBtn.innerText = 'Done';
+  completedBtn.classList.add('todo-items__completed-btn');
+  todoDiv.appendChild(completedBtn);
+  completedBtn.addEventListener('click', markAsComplete);
+
+  // // create the delete button
+  // const deleteBtn = document.createElement('button');
+  // deleteBtn.innerText = 'Delete';
+  // deleteBtn.classList.add('todo-items__delete-btn')
+  // todoDiv.appendChild(deleteBtn);
+  // deleteBtn.addEventListener('click', deleteTodoItem);
 
   // add to local storage
   saveToLocal(todoInput.value);
@@ -35,11 +42,15 @@ const addItem = (e) => {
   todoInput.value = '';
 }
 
+const markAsComplete = (e) => {
+  const completedItem = e.target.parentElement;
+  completedItem.classList.toggle('completed')
+}
+
 const deleteTodoItem = (e) => {
   const itemToDelete = e.target.parentElement;
   deleteLocalStorageItem(itemToDelete);
   itemToDelete.remove();
-
 }
 
 const saveToLocal = (todoItem) => {
@@ -71,12 +82,18 @@ const getFromLocalStorage = () => {
     todoItem.classList.add('todo-items__li-item');
     todoDiv.appendChild(todoItem);
 
-    // create the delete button
-    const deleteBtn = document.createElement('button');
-    deleteBtn.innerText = 'Delete';
-    deleteBtn.classList.add('todo-items__delete-btn')
-    todoDiv.appendChild(deleteBtn);
-    deleteBtn.addEventListener('click', deleteTodoItem);
+    // create the check mark button
+    const completedBtn = document.createElement('button');
+    completedBtn.innerText = 'Done';
+    completedBtn.classList.add('todo-items__completed-btn');
+    todoDiv.appendChild(completedBtn);
+
+    // // create the delete button
+    // const deleteBtn = document.createElement('button');
+    // deleteBtn.innerText = 'Delete';
+    // deleteBtn.classList.add('todo-items__delete-btn')
+    // todoDiv.appendChild(deleteBtn);
+    // deleteBtn.addEventListener('click', deleteTodoItem);
 
     // append the newly created todo div to the existing todo-list in HTML
     todoList.appendChild(todoDiv);
