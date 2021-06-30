@@ -27,11 +27,43 @@
     />
       <button class="btn create" aria-label="create new list">Submit</button>
     </form>
-    <div class="delete-stuff">
-      <button class="btn delete">Clear completed tasks</button>
-      <button class="btn delete" data-delete-list-button>Delete list</button>
-    </div>
   </div>
+  <div class="todo-list" data-list-display-container>
+    <div class="todo-header">
+      <h2 class="list-title" data-list-title>YouTube</h2>
+      <p class="task-count" data-list-count>3 tasks remaining</p>
+    </div>
+    <div class="todo-body" data-tasks>
+
+    </div>
+    <!-- Actual todo Items -->
+  </div>
+  <div class="new-task-creator">
+    <form action="" data-new-task-form>
+      <input
+        data-new-task-input
+        type="text"
+        class="new task"
+        placeholder="new task name"
+        aria-label="new task name"
+      />
+      <button class="btn create" aria-label="create new task">Add task</button>
+    </form>
+  </div>
+  <div class="delete-stuff">
+    <button class="btn delete">Clear completed tasks</button>
+    <button class="btn delete" data-delete-list-button>Delete list</button>
+  </div>
+
+  <template id="task-template">
+    <div class="task">
+      <input type="checkbox"/>
+      <label>
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+  </template>
+
   <script src="./js/app.js"></script>
 </body>
 </html>
