@@ -8,9 +8,25 @@
   <title>Vanilla JS Todo App</title>
 </head>
 <body>
-  <h1 class="test">TESTING TESTING 1233333</h1>
-  <p id="demo"></p>
-  <button onclick="testFunction()">Test</button>
+  <header>
+    <h1>New Todo App</h1>
+  </header>
+  <section class="newtodo-section">
+    <h2>Insert Todo</h2>
+    <div class="container">
+      <form class="todo-form">
+        <input autofocus type="text" aria-label="Enter a new todo item" placeholder="E.g. Build a web app" class="todo-input">
+      </form>
+    </div>
+  </section>
+  <section class="active-section">
+    <h2>Active Todos</h2>
+    <h1 class="app-title">todos</h1>
+    <ul class="todo-list todo-items"></ul>
+  </section>
+  <section class="completed-section">
+    <h2>Completed Todos</h2>
+  </section>
   <script src="app.js"></script>
 </body>
 </html>
