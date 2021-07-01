@@ -1,22 +1,26 @@
+// list related components
 const listsContainer = document.querySelector('[data-lists]');
 const newListForm = document.querySelector('[data-new-list-form]');
 const newListInput = document.querySelector('[data-new-list-input]');
 const deleteListBtn = document.querySelector('[data-delete-list-button]');
-
 const listDisplayContainer = document.querySelector('[data-list-display-container]');
 const listTitleElement = document.querySelector('[data-list-title]');
 const listCountElement = document.querySelector('[data-list-count]');
+
+// task related components
 const tasksContainer = document.querySelector('[data-tasks]');
 const taskTemplate = document.getElementById('task-template');
 const newTaskForm = document.querySelector('[data-new-task-form]');
 const newTaskInput = document.querySelector('[data-new-task-input]');
 const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]');
 
+// local storage related
 const LOCAL_STORAGE_LIST_KEY = 'task.lists';
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId';
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || [];
 let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY);
 
+// to create a new list object
 const createList = (name) => ({
   id: Date.now().toString(),
   name,
@@ -29,11 +33,13 @@ const clearElement = (element) => {
   }
 };
 
+// saving to localStorage
 const save = () => {
-  localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists));
-  localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListId);
+  localStorage.setItem(LOCAL_STORAGE_LIST_KEY, JSON.stringify(lists)); // the lists themselves
+  localStorage.setItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY, selectedListId); // ID to selected list
 };
 
+// rendering the lists to the page
 const renderLists = () => {
   lists.forEach((list) => {
     const listElement = document.createElement('li');
@@ -96,6 +102,7 @@ const createTask = (name) => ({
 listsContainer.addEventListener('click', (e) => {
   if (e.target.tagName.toLowerCase() === 'li') {
     selectedListId = e.target.dataset.listId;
+    console.log('in listsContainer event listener', selectedListId);
     saveAndRender();
   }
 });

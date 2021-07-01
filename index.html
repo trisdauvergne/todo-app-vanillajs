@@ -9,44 +9,34 @@
 </head>
 <body>
   <header>
-    <h1>New Todo App</h1>
+    <h1>Yet another to do...</h1>
+    <h5>(sweat smile)</h5>
   </header>
-  <div class="all-tasks">
-    <h2>My lists</h2>
-    <ul class="task-list" data-lists>
-      <!-- List categories in here -->
-    </ul>
-    <form action=""
-    data-new-list-form>
-    <input
-      data-new-list-input
-      type="text"
-      class="new-list"
-      placeholder="new list name"
-      aria-label="new list name"
-    />
-      <button class="btn create" aria-label="create new list">Submit</button>
-    </form>
-  </div>
-  <div class="todo-list" data-list-display-container>
-    <div class="todo-header">
-      <h2 class="list-title" data-list-title>YouTube</h2>
-      <p class="task-count" data-list-count>3 tasks remaining</p>
+  <container class="container">
+    <div class="all-tasks">
+      <h2>My lists</h2>
+      <ul class="task-list" data-lists>
+        <!-- List categories in here -->
+      </ul>
+      <form action="" data-new-list-form>
+      <input type="text" class="new-list" placeholder="Create a new list" data-new-list-input/>
+        <button class="btn create">Submit</button>
+      </form>
     </div>
-    <div class="todo-body" data-tasks>
-      <!-- Actual todo Items -->
+    <div class="todo-list" data-list-display-container>
+      <div class="todo-header">
+        <h2 class="list-title" data-list-title></h2>
+        <p class="task-count" data-list-count></p>
+      </div>
+      <div class="todo-body" data-tasks>
+        <!-- Actual todo Items -->
+      </div>
     </div>
-  </div>
+  </container>
   <div class="new-task-creator">
     <form action="" data-new-task-form>
-      <input
-        data-new-task-input
-        type="text"
-        class="new task"
-        placeholder="new task name"
-        aria-label="new task name"
-      />
-      <button class="btn create" aria-label="create new task">Add task</button>
+      <input type="text" class="new task" placeholder="new task name" data-new-task-input/>
+      <button class="btn create">Add task</button>
     </form>
   </div>
   <div class="delete-stuff">
