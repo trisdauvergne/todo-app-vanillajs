@@ -142,7 +142,7 @@ deleteListBtn.addEventListener('click', () => {
 });
 
 // clearing the completed tasks
-clearCompleteTasksButton.addEventListener('click', (e) => {
+clearCompleteTasksButton.addEventListener('click', () => {
   const selectedList = lists.find((list) => list.id === selectedListId);
   selectedList.tasks = selectedList.tasks.filter((task) => !task.complete);
   saveAndRender();
