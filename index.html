@@ -9,19 +9,20 @@
 </head>
 <body>
   <header>
-    <h1>Yet another to do...</h1>
-    <h5>(sweat smile)</h5>
+    <h1>Another todo</h1>
   </header>
-  <container class="container">
+  <container>
     <div class="all-tasks">
-      <h2>My lists</h2>
+      <h2>Lists</h2>
       <ul class="task-list" data-lists>
         <!-- List categories in here -->
       </ul>
-      <form action="" data-new-list-form>
-      <input type="text" class="new-list" placeholder="Create a new list" data-new-list-input/>
-        <button class="btn create">Submit</button>
-      </form>
+      <div class="new-list-form">
+        <form action="" data-new-list-form>
+          <input type="text" class="new-list" placeholder="Create a new list" data-new-list-input/>
+          <button class="btn create">+</button>
+        </form>
+      </div>  
     </div>
     <div class="todo-list" data-list-display-container>
       <div class="todo-header">
