@@ -17,6 +17,7 @@
       <ul class="task-list" data-lists>
         <!-- List categories in here -->
       </ul>
+      <button class="btn delete deletelist" data-delete-list-button>Delete selected list</button>
       <div class="new-list-form">
         <form action="" data-new-list-form>
           <input type="text" class="new list" placeholder="Create a new list" data-new-list-input/>
@@ -29,21 +30,19 @@
         <h2 class="list-title" data-list-title></h2>
         <p class="task-count" data-list-count></p>
       </div>
+      <button class="btn delete clearcompleted" data-clear-complete-tasks-button>Clear completed tasks</button>
       <div class="todo-body" data-tasks>
         <!-- Actual todo Items -->
       </div>
+      <div class="new-task-creator">
+        <form class="new-task-form" action="" data-new-task-form>
+          <input type="text" class="new task" placeholder="Add a new task" data-new-task-input/>
+          <button class="btn create">+</button>
+        </form>
+      </div>
+      
     </div>
   </container>
-  <div class="new-task-creator">
-    <form action="" data-new-task-form>
-      <input type="text" class="new task" placeholder="Add a new task" data-new-task-input/>
-      <button class="btn create">+</button>
-    </form>
-  </div>
-  <div class="delete-stuff">
-    <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
-    <button class="btn delete" data-delete-list-button>Delete list</button>
-  </div>
 
   <template id="task-template">
     <div class="task">

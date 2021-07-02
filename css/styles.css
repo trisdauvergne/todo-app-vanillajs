@@ -26,10 +26,10 @@ pink - rgba(251,151,191,255)
 
 header {
   display: flex;
-  width: 200px;
+  width: 300px;
   height: 100px;
   border: 0.5px black solid;
-  border-radius: 100px / 50px;
+  border-radius: 150px / 50px;
   background: rgba(74,227,94,255);
   margin: auto;
   align-items: center;
@@ -95,10 +95,6 @@ h2 {
   width: 2rem;
 }
 
-/* .btn.create {
-  width: 2rem;
-} */
-
 .btn.create:hover {
   opacity: 0.7;
 }
@@ -112,17 +108,6 @@ h2 {
   width: 50vw;
   border: 1px solid black;
 }
-
-.btn.delete {
-  opacity: 0.7;
-  font-size: 1rem;
-  transition: color 200ms;
-}
-
-.btn.delete:hover {
-  color: red;
-}
-
 .new-task-creator {
   display: flex;
   justify-content: center;
@@ -173,7 +158,7 @@ h2 {
 
 .task label {
   display: flex-inline;
-  align-items: center;
+  /* align-items: center; */
   position: relative;
 }
 
@@ -233,8 +218,35 @@ h2 {
           transform-origin: left;
 }
 
-.delete-stuff {
+.btn.delete {
+  background-color: rgba(255,255,255,0.3);
+  border: 1px solid black;
+  padding: 0.25rem;
+  border-radius: 100px;
+  opacity: 0.8;
+  font-size: 0.75rem;
+  transition: background-color 200ms;
+  transition: font-weight 150ms ease-in-out;
+  font-family: 'Dosis', sans-serif;
+}
+
+.btn.delete:hover {
+  cursor: pointer;
+  background-color: white;
+  font-weight: 700;
+}
+
+.deletelist {
+  margin-top: 1rem;
+  margin-left: 2.5rem;
+}
+
+.todo-list {
   display: flex;
-  justify-content: space-evenly;
-  width: 100%;
+  flex-direction: column;
+}
+
+.clearcompleted {
+  width: 10rem;
+  margin: auto;
 }
