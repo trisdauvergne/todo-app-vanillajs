@@ -9,38 +9,27 @@
 
 body {
   font-family: 'Dosis', sans-serif;
-  /* font-weight: 300; */
   background-color: rgba(63,56,250,255);
 }
 
-/*
-font-family: 'Dosis', sans-serif;
-*/
-
-/* 
-blue - rgba(63,56,250,255)
-orange - rgba(254,92,1,255)
-green - rgba(74,227,94,255)
-pink - rgba(251,151,191,255)
- */
-
 header {
   display: flex;
-  width: 300px;
-  height: 100px;
-  border: 0.5px black solid;
-  border-radius: 150px / 50px;
+  width: 400px;
+  height: 120px;
+  border: 3px black solid;
+  border-radius: 175px / 60px;
   background: rgba(74,227,94,255);
   margin: auto;
+  text-align: center;
+  justify-content: center;
   align-items: center;
   margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   transform: rotate(-10deg);
 }
 
 header > h1 {
-  font-size: 2.5rem;
-  align-items: center;
+  font-size: 3.75rem;
   font-weight: 300;
 }
 
@@ -52,17 +41,18 @@ container {
 h2 {
   text-align: center;
   margin: 1rem;
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 3rem;
 }
 
-.all-lists {
+.lists {
   width: 30vw;
   background: rgba(254,92,1,255);
   border: 1px solid black;
   margin-right: 1rem;
 }
 
-.task-list {
+.lists__names {
   font-size: 1.25rem;
   line-height: 1.7;
   list-style: circle inside;
@@ -103,12 +93,20 @@ h2 {
   font-weight: 700;
 }
 
-.todo-list {
+.todos {
   background: rgba(251,151,191,255);
   width: 50vw;
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
 }
-.new-task-creator {
+
+.todos__header {
+  display: flex;
+  margin: auto;
+}
+
+.todos__new-task {
   display: flex;
   justify-content: center;
 }
@@ -131,7 +129,7 @@ h2 {
   outline: none;
 }
 
-.new-list-form {
+.lists__new-list-form {
   margin: 1rem;
   display: flex;
   justify-content: space-evenly;
@@ -142,12 +140,18 @@ h2 {
   border-bottom-width: 4px;
 }
 
-.task-count {
+.todos__count {
   text-align: center;
   margin-bottom: 1rem;
+  margin-right: 1rem;
 }
 
-.todo-body {
+.todos__clear-completed {
+  position: relative;
+  top: -7px;
+}
+
+.todos__all-tasks {
   margin: 1rem;
 }
 
@@ -157,7 +161,7 @@ h2 {
 }
 
 .task label {
-  display: flex-inline;
+  /* display: flex-inline; */
   /* align-items: center; */
   position: relative;
 }
@@ -218,7 +222,7 @@ h2 {
           transform-origin: left;
 }
 
-.btn.delete {
+.delete-btn {
   background-color: rgba(255,255,255,0.3);
   border: 1px solid black;
   padding: 0.25rem;
@@ -228,25 +232,16 @@ h2 {
   transition: background-color 200ms;
   transition: font-weight 150ms ease-in-out;
   font-family: 'Dosis', sans-serif;
+  margin: auto;
 }
 
-.btn.delete:hover {
+.delete-btn:hover {
   cursor: pointer;
   background-color: white;
   font-weight: 700;
 }
 
-.deletelist {
+.lists__delete-list-btn {
   margin-top: 1rem;
   margin-left: 2.5rem;
-}
-
-.todo-list {
-  display: flex;
-  flex-direction: column;
-}
-
-.clearcompleted {
-  width: 10rem;
-  margin: auto;
 }

@@ -12,36 +12,36 @@
     <h1>Another todo</h1>
   </header>
   <container>
-    <div class="all-lists">
+    <section class="lists">
       <h2>Lists</h2>
-      <ul class="task-list" data-lists>
+      <ul class="lists__names" data-lists>
         <!-- List categories in here -->
       </ul>
-      <button class="btn delete deletelist" data-delete-list-button>Delete selected list</button>
-      <div class="new-list-form">
+      <button class="lists__delete-list-btn delete-btn" data-delete-list-button>Delete selected list</button>
+      <div class="lists__new-list-form">
         <form action="" data-new-list-form>
-          <input type="text" class="new list" placeholder="Create a new list" data-new-list-input/>
+          <input type="text" class="new" placeholder="Create a new list" data-new-list-input/>
           <button class="btn create">+</button>
         </form>
       </div>  
-    </div>
-    <div class="todo-list" data-list-display-container>
-      <div class="todo-header">
-        <h2 class="list-title" data-list-title></h2>
-        <p class="task-count" data-list-count></p>
+    </section>
+    <section class="todos" data-list-display-container>
+      <h2 class="todos__list-name" data-list-title></h2>
+      <div class="todos__header">
+        <p class="todos__count" data-list-count></p>
+        <button class="todos__clear-completed btn delete-btn" data-clear-complete-tasks-button>Clear completed tasks</button>
       </div>
-      <button class="btn delete clearcompleted" data-clear-complete-tasks-button>Clear completed tasks</button>
-      <div class="todo-body" data-tasks>
+      
+      <div class="todos__all-tasks" data-tasks>
         <!-- Actual todo Items -->
       </div>
-      <div class="new-task-creator">
-        <form class="new-task-form" action="" data-new-task-form>
+      <div class="todos__new-task">
+        <form class="todos__new-task-form" action="" data-new-task-form>
           <input type="text" class="new task" placeholder="Add a new task" data-new-task-input/>
           <button class="btn create">+</button>
         </form>
       </div>
-      
-    </div>
+    </section>
   </container>
 
   <template id="task-template">
