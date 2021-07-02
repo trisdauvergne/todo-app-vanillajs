@@ -51,6 +51,10 @@ const renderLists = () => {
     }
     listsContainer.appendChild(listElement);
   });
+  // const btn = document.createElement('button');
+  // btn.innerText = 'Button';
+  // btn.attributes.add(data-delete-list-button);
+  // listsContainer.appendChild(btn);
 };
 
 const renderTaskCount = (selectedList) => {
@@ -74,12 +78,17 @@ const renderTasks = (selectedList) => {
 
 const render = () => {
   clearElement(listsContainer);
+  console.log('selectedListId', selectedListId); // why is this null?
   renderLists();
+
+  // selectedList isn't working //////////////////////////////////////////////
+
   const selectedList = lists.find((list) => list.id === selectedListId);
   if (selectedListId === null) {
     listDisplayContainer.style.display = 'none';
   } else {
     listDisplayContainer.style.display = '';
+    console.log(listTitleElement, selectedList);
     listTitleElement.innerText = selectedList.name;
     renderTaskCount(selectedList);
     clearElement(tasksContainer);
